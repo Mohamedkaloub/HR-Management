@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Attendance>
+ <nav class="navbar navbar-light bg-light" dir="rtl">
+  <form class="form-inline">
+    <button class="btn btn-sm btn-outline-secondary" type="button"> <a class="dropdown-item" asp-action="ViewOne" asp-controller="Employee" asp-route-Id=@ViewBag.Id>الموظف</a></button>
+    <button class="btn btn-sm btn-outline-secondary" type="button"><a class="dropdown-item" asp-action="index" asp-controller="Salary" asp-route-Id=@ViewBag.Id >المرتب</a></button>
+        <button class="btn  btn-outline-success" type="button"><a class="dropdown-item" asp-action="index" asp-controller="Attendance" asp-route-Id=@ViewBag.Id>الاجازات</a></button>  
+</form>
+</nav>
+<h1>سجل الاجازات </h1>
+<div class="container ">
+    <div class="row mb-3"><span class="col-10" ></span><span class="col-2"><a id="AddAttendance" class="btn btn-success col-10 ">اضافة</a>
+</span></div>
+</div>
+<table class="table table-borderd table-striped" id="Attendancetable" dir="rtl">
+  <thead>
+    <tr>
+      <th class="text-center">التاريخ</th>
+      <th class="text-center">عدد الايام</th>
+      <th class="text-center">نوع الاجازة</th>
+      <th class="text-center">العمليات</th>
+  </tr>
+  </thead>
+ @* <tbody>
+
+       @foreach(var x in Model){
+            <tr>
+      <td>@x.Total</td>
+      <td>@x.punishment</td>
+    <td><a class="btn-primary btn" asp-route-id="@x.Id" asp-area="" asp-controller="Attendance" asp-action="Delete"/>مسح<a/></td>
+     <td><a class="btn-primary btn" asp-route-id="@x.Id"  asp-area="" asp-controller="Attendance" asp-action="Edit">تعديل</a></td>
+    </tr>
+       }
+  </tbody>*@
+</table>
+<div class="modal fade modal" id="AttendanceModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="text-info modal-title">اضافة</h1>
+                <button class="btn-close text-danger" data-bs-dismiss="modal" dir="ltr"></button>
+            </div>
+            <div class="modal-body" dir="rtl">
+                <form method="post">
+                    <input type="number" value="@ViewBag.Id" id="empid" hidden/>
+               <div class="form-group"  >
+      <label  class="form-label mt-10">التاريخ </label>
+      <input  class="form-control" type="date"  placeholder="التاريخ" id="Atdate">
+    </div>
+     <div class="form-group">
+      <label  class="form-label mt-10 ">عدد الايام </label>
+      <input  type="number" class="form-control"   placeholder="عدد الايام" id="Atdays">
+    </div>
+
+      <div class="form-group">
+      <label  class="form-label mt-10 ">نوع الاجازة </label>
+      <select class="form-control" id="Attype">
+			<option value="غير معرف" disabled selected >نوع الاجازة</option>
+            <option value="سنوية">سنوية</option>
+            <option value="مرضية">مرضية</option>
+            <option value="غياب" >غياب</option>
+            </select>
+    </div>
+    </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit" id="SaveAttendance">حفظ</button>
+                <button class="btn btn-danger btn-default" data-bs-dismiss="modal" id="close">غلق</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+<script src="/js/Attendance.js" ></script> 
+}

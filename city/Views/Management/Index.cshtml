@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Management>
+<h1>الوظائف</h1>
+<div class="container ">
+    <div class="row "><span class="col-10" ></span><span class="col-2"><a type="button" class="btn btn-success col-10 
+" asp-controller="Management" asp-action="Create">تسجل جديد</a>
+</span></div>
+</div>
+<table class="table table-borderd table-striped" dir="rtl">
+  <thead>
+    <tr>
+      <th scope="col">الاسم</th>
+      <th scope="col">العدد</th>
+  </tr>
+  </thead>
+  <tbody>
+
+       @foreach(var x in Model){
+            <tr>
+      <td>@x.Name</td>
+
+    <td><a class="btn-primary btn" asp-route-id="@x.Id" asp-area="" asp-controller="Management" asp-action="Delete"/>مسح<a/></td>
+     <td><a class="btn-primary btn" asp-route-id="@x.Id"  asp-area="" asp-controller="Management" asp-action="Edit">تعديل</a></td>
+    </tr>
+       }
+  </tbody>
+</table>

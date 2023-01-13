@@ -1,0 +1,133 @@
+﻿@model Employee
+<h1 dir="rtl" >تسجيل موظف جديد</h1>
+<form method="post" dir="rtl"  >
+    <div class="row">
+  <div class="col-sm-3">
+    <div class="form-group">
+      <label  class="form-label mt-4 ">كود الموظف</label>
+      <input asp-for="Emp_code" type="text" class="form-control"  placeholder="ادخل الكود">
+       <span asp-validation-for="Emp_code" class="text-danger"></span>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <div class="form-group">
+       <label  class="form-label mt-4">الاسم</label>
+      <input asp-for="Name" type="text" class="form-control"  placeholder="الاسم">
+      <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+  </div>
+</div>
+ <div class="row">
+  <div class="col-sm-8">
+    <div class="form-group">
+     <label  class="form-label mt-4">العنوان</label>
+      <input asp-for="Address" type="text" class="form-control"  placeholder="العنوان">
+            <span asp-validation-for="Address" class="text-danger"></span>
+
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+       <label  class="form-label mt-4">الرقم القومي</label>
+        <input asp-for="Nat_id" type="text" class="form-control"  placeholder="الرقم القومي">
+              <span asp-validation-for="Nat_id" class="text-danger"> </span>
+
+    </div>
+  </div>
+</div>
+       
+     <div class="form-group">
+       <label  class="form-label mt-4">المؤهل</label>
+      <input asp-for="Qualif" type="text" class="form-control"  placeholder="المؤهل">
+            <span asp-validation-for="Qualif" class="text-danger"></span>
+
+    </div>
+          <div class="row">
+  <div class="col-sm-5">
+    <div class="form-group">
+      <label  class="form-label mt-4">تاريخ التعيين</label>
+      <input asp-for="Hire_date" type="date" class="form-control"  placeholder="تاريخ التعيين">
+            <span asp-validation-for="Hire_date" class="text-danger"></span>
+    </div>
+  </div>
+
+
+         <div class="col-sm-5">
+    <div class="form-group">
+       <label  class="form-label mt-4">تاريخ التسوية</label>
+      <input asp-for="Ret_date" type="date" class="form-control"  placeholder="تاريخ التسوية">
+    </div>
+       </div>
+       </div>
+      <div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+              <label  class="form-label mt-4">الوظيفة</label>
+      <select asp-items="ViewBag.JobList" asp-for="JobId" class="form-control">
+			<option value="0" disabled selected >ادخل الوطيفة</option>
+				</select>
+    </div>
+          <span asp-validation-for="JobId" class="text-danger"></span>
+
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+        <label  class="form-label mt-4">القسم</label>
+      <select asp-items="ViewBag.DerpartmentList" asp-for="DepartmentId" class="form-control">
+			<option value="0" disabled selected >ادخل القسم</option>
+				</select>
+    </div>
+          <span asp-validation-for="DepartmentId" class="text-danger"></span>
+
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+        <label  class="form-label mt-4">الادارة</label>
+     <select asp-items="ViewBag.ManagementList" asp-for="ManagmentId" class="form-control">
+			<option value="0" disabled selected >ادخل الادارة</option>
+            </select>
+    </div>
+          <span asp-validation-for="ManagmentId" class="text-danger"></span>
+  </div>
+      <div class="row" >
+   <div class="col-sm-4">
+    <div class="form-group">
+        <label  class="form-label mt-4">القطاع</label>
+     <select asp-items="ViewBag.SectionList" asp-for="SectionId" class="form-control">
+			<option value="0" disabled selected >ادخل القطاع</option>
+            </select>
+    </div>
+          <span asp-validation-for="SectionId" class="text-danger"></span>
+  </div>
+
+<div class="col-sm-4">
+    <div class="form-group">
+       <label  class="form-label mt-4">الشيفت</label>
+              <select  class="form-control" asp-for="Shift">
+			  <option value="0" disabled selected >ادخل الشفت</option>
+              <option value="أ">أ</option>
+              <option value="ب">ب</option>
+              <option value="ج">ج</option>
+              <option value="نهاري">نهاري</option>
+            </select>
+            <span asp-validation-for="Shift" class="text-danger"> </span>
+
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+       <label  class="form-label mt-4">المدير المباشر</label>
+        <input asp-for="Manager" type="text" class="form-control"  placeholder="المدير المباشر">
+              <span asp-validation-for="Manager" class="text-danger"> </span>
+
+    </div>
+  </div>
+ </div>
+  
+ <div class="form-group">
+            <button type="submit" class="btn btn-primary col-2 mt-2">حفظ</button>
+            </div>
+ </form>
+
+
+ 

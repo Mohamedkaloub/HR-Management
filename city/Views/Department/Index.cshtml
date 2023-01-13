@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Department>
+<h1>الاقسام</h1>
+<div class="container ">
+    <div class="row "><span class="col-10" ></span><span class="col-2"><a type="button" class="btn btn-success col-10 
+" asp-controller="Department" asp-action="Create">تسجل جديد</a>
+</span></div>
+</div>
+<div class="container ">
+    <button class="btn-primary btn btn-sm" id="adddep">اضافة</button>
+</div>
+
+<table class="table table-borderd table-striped" dir="rtl">
+  <thead>
+    <tr>
+      <th scope="col">الاسم</th>
+     
+  </tr>
+  </thead>
+  <tbody>
+
+       @foreach(var x in Model){
+            <tr>
+      <td>@x.Name</td>
+     
+    <td><a class="btn-primary btn" asp-route-id="@x.Id" asp-area="" asp-controller="Department" asp-action="Delete"/>مسح<a/></td>
+     <td><a class="btn-primary btn" asp-route-id="@x.Id"  asp-area="" asp-controller="Department" asp-action="Edit">تعديل</a></td>
+    </tr>
+       }
+  </tbody>
+</table>
+<div class="modal fade" id="depmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" dir="rtl"  >
+    <div class="row">
+  <div class="col-sm-9">
+    <div class="form-group">
+      <label  class="form-label mt-10 ">ادخل القسم </label>
+      <input type="text" class="form-control"  placeholder="ادخل اسم القسم">
+    </div>
+  </div>
+</div>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts{
+<script src="~/js/adddep.js" ></script> 
+}

@@ -1,0 +1,29 @@
+﻿@model RetReasonView
+<h1 dir="rtl" >سبب ترك العمل</h1>
+<form method="post" dir="rtl"  >
+    <div class="row">
+  <div class="col-sm-9">
+    <div class="form-group">
+      <label  class="form-label mt-10 ">سبب الترك </label>
+      <input asp-for="RetReason.reason" type="text" class="form-control"  placeholder="المرتب">
+    </div>
+  </div>
+   <div class="col-sm-3">
+    <div class="form-group">
+      <label  class="form-label mt-10 ">كود الموظف </label>
+      <input asp-for="RetReason.Emp_Code" type="text" class="form-control"  placeholder="ادخل اسم الوظيفة">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-9">
+    <div class="form-group">
+      <label  class="form-label mt-10 ">الاسم </label>
+      <input asp-for="Name" type="text" class="form-control"  placeholder="الاسم">
+    </div>
+  </div>
+</div>
+ <div class="form-group">
+            <button type="submit" class="btn btn-primary col-2 mt-2">حفظ</button>
+            </div>
+</form>

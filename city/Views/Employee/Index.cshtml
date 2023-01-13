@@ -1,0 +1,24 @@
+﻿
+<h1>بيانات الموظفين</h1>
+<div class="container ">
+    <div class="row mb-4 "><span class="col-10 mb-4 " ></span><span class="col-2"><a type="button" class="btn btn-success col-10 
+" asp-controller="Employee" asp-action="Create">تسجل جديد</a>
+</span></div>
+</div>
+<table id="TblData"  class="table table-bordered table-hover dataTables_scrollBody table-responsive" dir="rtl" >
+  <thead>
+    <tr>
+      <th class="text-center">الكود</th>
+      <th  class="text-center">الاسم</th>
+      <th  class="text-center">الرقم القومي</th>
+      <th  class="text-center">تاريخ التعيين</th>
+      <th  class="text-center">الوظيفة</th>
+      <th  class="text-center">العمليات</th>
+    </tr>
+  </thead>
+ 
+</table>
+
+@section Scripts{
+<script src="~/js/datatable.js" ></script> 
+}

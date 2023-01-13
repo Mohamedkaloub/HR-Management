@@ -1,0 +1,113 @@
+﻿@model Employee
+  <nav class="navbar navbar-light bg-light" dir="rtl">
+  <form class="form-inline">
+    <button class="btn btn-outline-success" type="button"> <a class="dropdown-item" asp-action="ViewOne" asp-controller="Employee" asp-route-Id=@Model.Id >الموظف</a></button>
+    <button class="btn btn-sm btn-outline-secondary" type="button"><a class="dropdown-item" asp-action="index" asp-controller="Salary" asp-route-Id=@Model.Id>المرتب</a></button>
+    <button class="btn btn-sm btn-outline-secondary" type="button"><a class="dropdown-item" asp-action="index" asp-controller="Attendance" asp-route-Id=@Model.Id>الاجازات</a></button>
+</form>
+</nav>
+
+<form method="post" dir="rtl"  >
+    <div class="row">
+  <div class="col-sm-3">
+    <div class="form-group">
+      <label  class="form-label mt-4 ">كود الموظف</label>
+      <input asp-for="Emp_code" type="text" class="form-control"  placeholder="ادخل الكود" disabled>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <div class="form-group">
+       <label  class="form-label mt-4">الاسم</label>
+      <input asp-for="Name" type="text" class="form-control"  placeholder="الاسم" disabled>
+    </div>
+  </div>
+</div>
+ <div class="row">
+  <div class="col-sm-8">
+    <div class="form-group">
+     <label  class="form-label mt-4">العنوان</label>
+      <input asp-for="Address" type="text" class="form-control"  placeholder="العنوان" disabled>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+       <label  class="form-label mt-4">الرقم القومي</label>
+        <input asp-for="Nat_id" type="text" class="form-control"  placeholder="الرقم القومي" disabled>
+    </div>
+  </div>
+</div>
+       
+     <div class="form-group">
+       <label  class="form-label mt-4">المؤهل</label>
+      <input asp-for="Qualif" type="text" class="form-control"  placeholder="المؤهل" disabled>
+    </div>
+          <div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label  class="form-label mt-4">تاريخ التعيين</label>
+      <input asp-for="Hire_date"  class="form-control"  placeholder="تاريخ التعيين" disabled>
+    </div>
+  </div>
+         <div class="col-sm-4">
+    <div class="form-group">
+       <label  class="form-label mt-4">تاريخ التسوية</label>
+      <input asp-for="Ret_date"  class="form-control"  placeholder="تاريخ التسوية" disabled>
+    </div>
+       </div>
+      <div class="row">
+  <div class="col-sm-3">
+    <div class="form-group">
+              <label  class="form-label mt-4">الوظيفة</label>
+      <select asp-items="ViewBag.JobList" asp-for="JobId" class="form-control" disabled>
+			
+				</select>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="form-group">
+        <label  class="form-label mt-4">القسم</label>
+      <select asp-items="ViewBag.DerpartmentList" asp-for="DepartmentId" class="form-control" disabled>
+			
+				</select>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="form-group">
+        <label  class="form-label mt-4">الادارة</label>
+     <select asp-items="ViewBag.ManagementList" asp-for="ManagmentId" class="form-control" disabled>
+            </select>
+    </div>
+  </div>
+    <div class="col-sm-3">
+    <div class="form-group">
+        <label  class="form-label mt-4">القطاع</label>
+     <select asp-items="ViewBag.SectionList" asp-for="SectionId" class="form-control" disabled>
+            </select>
+    </div>
+  </div>
+</div>
+ <div class="row" >
+<div class="col-sm-4">
+    <div class="form-group">
+       <label  class="form-label mt-4">الشيفت</label>
+             <input asp-for="Shift"  class="form-control" disabled/>
+            <span asp-validation-for="Shift" class="text-danger"> </span>
+
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+       <label  class="form-label mt-4">المدير المباشر</label>
+        <input asp-for="Manager" type="text" class="form-control"  placeholder="المدير المباشر" disabled>
+              <span asp-validation-for="Manager" class="text-danger"> </span>
+
+    </div>
+  </div>
+ </div>
+<div class="row">
+<div class="form-group col-6">
+            <button asp-action="Index" asp-controller="Employee" class="btn btn-primary col-2 mt-2">رجوع</button>
+            </div>
+            </div>
+                        
+</form>

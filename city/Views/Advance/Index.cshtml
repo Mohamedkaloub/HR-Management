@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Advance>
+<h1>سجل السلف</h1>
+<div class="container ">
+    <div class="row mb-3"><span class="col-10" ></span><span class="col-2"><a id="AddAdvance" class="btn btn-success col-10 ">اضافة</a>
+</span></div>
+</div>
+<table class="table table-borderd table-striped" id="Advancetable" dir="rtl">
+  <thead>
+    <tr>
+      <th class="text-center">الكود</th>
+      <th class="text-center">الاسم</th>
+      <th class="text-center">المبلغ المطلوب</th>
+      <th class="text-center">المبلغ المصدق</th>
+      <th class="text-center">التاريخ</th>
+       <th class="text-center">العملبات</th>
+  </tr>
+  </thead>
+  <tbody class="text-center"></tbody>
+ @* <tbody>
+
+       @foreach(var x in Model){
+            <tr>
+      <td>@x.Total</td>
+      <td>@x.punishment</td>
+    <td><a class="btn-primary btn" asp-route-id="@x.Id" asp-area="" asp-controller="Advance" asp-action="Delete"/>مسح<a/></td>
+     <td><a class="btn-primary btn" asp-route-id="@x.Id"  asp-area="" asp-controller="Advance" asp-action="Edit">تعديل</a></td>
+    </tr>
+       }
+  </tbody>*@
+</table>
+<div class="modal fade modal" id="AdvanceModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="text-info modal-title">اضافة</h1>
+                <button class="btn-close text-danger" data-bs-dismiss="modal" dir="ltr"></button>
+            </div>
+            <div class="modal-body" dir="rtl">
+                <form method="post">
+               <div class="form-group"  >
+      <label  class="form-label mt-10">كود الموظف </label>
+      <input  class="form-control" type="number"  placeholder="الكود" id="Ad_code">
+    </div>
+     <div class="form-group"  >
+      <label  class="form-label mt-10">الاسم </label>
+      <input  class="form-control" type="text"  placeholder="الاسم" id="Ad_name" disabled>
+    </div>
+     <div class="form-group"  >
+      <label  class="form-label mt-10">المبلغ المطلوب </label>
+      <input  class="form-control" type="number"  placeholder="المبلغ المطلوب" id="Ad_need">
+    </div>
+
+     <div class="form-group">
+      <label  class="form-label mt-10 ">المبلغ المصدق </label>
+      <input  type="number" class="form-control"   placeholder="المبلغ المصدق" id="Ad_accept">
+    </div>
+    </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit" id="SaveAdvance">حفظ</button>
+                <button class="btn btn-danger btn-default" data-bs-dismiss="modal" id="close">غلق</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+<script src="~/js/Advance.js" ></script> 
+}
