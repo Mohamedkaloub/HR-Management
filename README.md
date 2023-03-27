@@ -3,7 +3,7 @@ Main Screen
 ![main screen](https://user-images.githubusercontent.com/49037055/228024738-10b98df2-7b21-4964-9f87-a9668d962c5c.png)
 All employees
 ![employee](https://user-images.githubusercontent.com/49037055/228026501-217435a5-1795-4a28-a1e5-3865f24bcda5.png)
-(View&Add&Update) Employee
+View Employee
 ![employee view](https://user-images.githubusercontent.com/49037055/228026211-6d3fb511-b5b0-4214-a73d-4330dec89855.png)
 Insert New Employee
 ![employee registration](https://user-images.githubusercontent.com/49037055/228027051-aea96f16-cdbd-4fec-91dd-c765197d0015.png)
